@@ -1,5 +1,8 @@
 # live-chat-app
 
+Frontend de uma aplicação live chat.
+
+Essa aplicação tem como objetivo estudar o VueJs e Socket io
 ## Project setup
 ```
 yarn install
