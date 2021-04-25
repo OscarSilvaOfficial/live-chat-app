@@ -35,7 +35,9 @@ export default {
   },
 
   mounted() {
-    this.renderMessage();
+    socketIo.on("receivedMessage", (messages) => {
+      this.pushMessage(messages);
+    });
   },
 
   data() {
@@ -47,10 +49,8 @@ export default {
   },
 
   methods: {
-    renderMessage() {
-      socketIo.on("receivedMessage", (messages) => {
-        this.globalMessages.push(messages);
-      });
+    pushMessage(message) {
+      this.globalMessages.push(message);
     },
 
     submitForm() {
