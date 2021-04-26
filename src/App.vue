@@ -38,6 +38,12 @@ export default {
     socketIo.on("receivedMessage", (messages) => {
       this.pushMessage(messages);
     });
+
+    socketIo.on("previousMessages", (messages) => {
+      for (let message of messages) {
+        this.pushMessage(message);
+      }
+    });
   },
 
   data() {
